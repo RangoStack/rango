@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rango.mapper.DeptMapper">
+    <insert id="addDept">
+        insert into dept(deptno, dname, db_source) value (#{deptno},#{dname},DATABASE())
+    </insert>
+
+    <select id="queryById" resultType="com.rango.pojo.Dept">
+        select * from dept where id = #{id}
+    </select>
+
+    <select id="queryAll" resultType="com.rango.pojo.Dept">
+        select * from dept
+    </select>
+</mapper>
